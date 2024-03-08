@@ -1,11 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class = "card">
+    <div class="card-body">
+        <h1>{{ note.title }}</h1>
+        <br>
+        <p>{{ note.description | safe}}</p>
+    </div>
+</div>
 
+<div class = "btn" style="position: fixed; bottom: 80px; right: 20px;">
+    <a class = "btn btn-danger" role = "button" href="{% url 'notes_delete' pk=note.pk%}">Delete</a>
+</div>
 
-<h1>{{ note.title }}</h1>
+<div class = "btn" style="position: fixed; bottom: 20px; right: 20px;">
+    <a class = "btn btn-primary" role = "button" href="{% url 'notes_edit' pk=note.pk%}">Edit</a>
+</div>
 
-<p>{{ note.description }}</p>
-
+<!-- <script>
+    window.onload = function() {
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href.split('#')[0]);
+        }
+    };
+</script> -->
 
 {% endblock content %}

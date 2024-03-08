@@ -2,10 +2,35 @@
 
 {% block content %}
 
-<form action="" method = "post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type = "submit">Add</button>
-</form>
+<div class = "card">
 
+    <div class = "card-body">
+        <form action="" method = "post">
+            {% csrf_token %}
+            <div class = "form-group">
+                <input type="text" class="form-control" name="title" placeholder="Enter title">
+            </div>
+            <br>
+            <div class = "form-group">
+                <div id="editor" style="height: 200px;"></div>
+                <input type="hidden" id="description" name="description">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+
+</div>
+
+<script>
+    var quill = new Quill('#editor', {
+      theme: 'snow'
+    });
+  
+    // Update hidden input field with HTML content on form submission
+    document.querySelector('form').addEventListener('submit', function() {
+      var descriptionInput = document.querySelector('#description');
+      descriptionInput.value = quill.root.innerHTML;
+    });
+</script>
 {% endblock content %}
