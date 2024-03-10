@@ -15,12 +15,13 @@
 
 
 
-    <div class = "card-header"
-    style="background-color: #6c757d; 
-    padding: 10px 20px;
-    border-bottom: 1px solid #dee2e6;
-    color: white;">
-        <h1 class="card-title">Notes</h1>
+    <div class="card-header" style="background-color: #6c757d; padding: 10px 20px; border-bottom: 1px solid #dee2e6; color: white; position: relative;">
+        <h1 class="card-title" style="margin-right: 50px;">Notes</h1>
+        <div class="header-user-box" style="position: absolute; top: 50%; transform: translateY(-50%); right: 20px; padding: 5px 10px; background-color: white; border-radius: 5px;">
+            {% if user.is_authenticated %}
+                <span class="user-name" style="color: black;">{{ user.username }}</span>
+            {% endif %}
+        </div>
     </div>
     
     {% block content %}
