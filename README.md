@@ -6,7 +6,7 @@ Welcome to the Notes App! This Django-based web application allows users to crea
 
 - **User Authentication**: Users can sign up, log in, and log out securely.
 - **Create Notes**: Authenticated users can create new notes with a title and description.
-- **View Notes**: Users can view their own notes and notes created by other users.
+- **View Notes**: Users can view their own notes but not the notes created by other users.
 - **Edit Notes**: Users can edit their own notes.
 - **Delete Notes**: Users can delete their own notes.
 - **Admin Interface**: Admins have access to an admin interface to manage users and notes.
